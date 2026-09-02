@@ -5,7 +5,7 @@ Full-Stack Developer with a degree in **Information Technology from BUITEMS**. I
 ---
 
 ### Live Portfolio & Work
-- **Explore Live Portfolio**: [rashid-ali-portfolio-one.vercel.app](https://rashid-ali-portfolio-one.vercel.app) *(or [rashidali.is-a.dev](https://rashidali.is-a.dev))*
+- **Explore Live Portfolio**: [rashid-ali-portfolio-one.vercel.app](https://rashid-ali-portfolio-one.vercel.app) (or [rashidali.is-a.dev](https://rashidali.is-a.dev))
 - **LinkedIn**: [linkedin.com/in/rashidalix](https://linkedin.com/in/rashidalix)
 
 ---
@@ -19,8 +19,8 @@ Full-Stack Developer with a degree in **Information Technology from BUITEMS**. I
 ---
 
 ### Education & Training
-- **Bachelor of Information Technology** â€” BUITEMS
-- **Full-Stack Web Development** â€” Saylani Mass IT Training (SMIT)
+- **Bachelor of Information Technology** - BUITEMS
+- **Full-Stack Web Development** - Saylani Mass IT Training (SMIT)
 
 ---
 
