@@ -8,19 +8,24 @@ def generate_smooth_bio_hud():
     assets_dir = os.path.join(repo_dir, 'assets')
     os.makedirs(assets_dir, exist_ok=True)
     
-    # Load crowned emblem
-    src_path = r'C:\Users\Puzzz\.gemini\antigravity\brain\a652c583-ed1f-4213-966a-c7803255cc3e\.user_uploaded\media_1791409275162.png'
-    raw_img = Image.open(src_path).convert('RGBA')
-    w, h = raw_img.size
+    # Load white Dope image
+    white_dope_path = r'C:\Users\Puzzz\.gemini\antigravity\brain\a652c583-ed1f-4213-966a-c7803255cc3e\.user_uploaded\media_1791410551299.png'
+    white_img = Image.open(white_dope_path).convert('RGBA')
+    w, h = white_img.size
     
-    crop_box = (int(w * 0.25), int(h * 0.04), int(w * 0.75), int(h * 0.65))
-    emblem = raw_img.crop(crop_box)
+    # Crop central calligraphy, crown, red sun & ink smoke
+    crop_box = (int(w * 0.15), int(h * 0.02), int(w * 0.75), int(h * 0.88))
+    white_crop = white_img.crop(crop_box)
     
-    # Resize emblem for avatar frame (fit nicely inside 135x135)
+    # Fit nicely inside avatar box (size 135x135)
     av_box_size = 135
-    e_w = 125
-    e_h = int(e_w * (emblem.height / emblem.width))
-    emblem_resized = emblem.resize((e_w, e_h), Image.Resampling.LANCZOS)
+    target_w = 127
+    target_h = int(target_w * (white_crop.height / white_crop.width))
+    if target_h > 127:
+        target_h = 127
+        target_w = int(target_h * (white_crop.width / white_crop.height))
+        
+    white_resized = white_crop.resize((target_w, target_h), Image.Resampling.LANCZOS)
     
     bio_w = 900
     bio_h = 240
@@ -36,7 +41,7 @@ def generate_smooth_bio_hud():
         f_mono = f_mono_bold
         f_header = f_mono_bold
         
-    print("Synthesizing smooth Bio HUD frames...")
+    print("Synthesizing Bio HUD with white Dope avatar...")
     for f in range(num_frames):
         t = f / float(num_frames)
         pulse = 0.5 + 0.5 * math.sin(t * 2 * math.pi)
@@ -72,18 +77,18 @@ def generate_smooth_bio_hud():
         bdraw.line([(10, bio_h - 11), (10 + 20, bio_h - 11)], fill=corner_c, width=2)
         bdraw.line([(10, bio_h - 11), (10, bio_h - 11 - 20)], fill=corner_c, width=2)
         bdraw.line([(bio_w - 11, bio_h - 11), (bio_w - 11 - 20, bio_h - 11)], fill=corner_c, width=2)
-        bdraw.line([(bio_w - 11, bio_h - 11), (bio_w - 11 - 20, bio_h - 11)], fill=corner_c, width=2)
+        bdraw.line([(bio_w - 11, bio_h - 11), (bio_w - 11, bio_h - 11 - 20)], fill=corner_c, width=2)
         
         # Avatar Frame
         av_box_x = 24
         av_box_y = 24
-        bdraw.rectangle([av_box_x, av_box_y, av_box_x + av_box_size, av_box_y + av_box_size], outline=(48, 52, 68, 255), fill=(10, 11, 16, 255), width=1)
-        bdraw.rectangle([av_box_x + 3, av_box_y + 3, av_box_x + av_box_size - 3, av_box_y + av_box_size - 3], outline=(255, 30, 66, int(80 + 50 * pulse)), width=1)
+        bdraw.rectangle([av_box_x, av_box_y, av_box_x + av_box_size, av_box_y + av_box_size], outline=(48, 52, 68, 255), fill=(250, 250, 252, 255), width=1)
+        bdraw.rectangle([av_box_x + 3, av_box_y + 3, av_box_x + av_box_size - 3, av_box_y + av_box_size - 3], outline=(255, 30, 66, int(100 + 60 * pulse)), width=1)
         
-        # Paste Crowned DOPE Emblem
-        epx = av_box_x + (av_box_size - e_w) // 2
-        epy = av_box_y + (av_box_size - e_h) // 2
-        bframe.paste(emblem_resized, (epx, epy), emblem_resized)
+        # Paste White Dope Calligraphy Emblem inside Avatar Box
+        epx = av_box_x + (av_box_size - target_w) // 2
+        epy = av_box_y + (av_box_size - target_h) // 2
+        bframe.paste(white_resized, (epx, epy), white_resized)
         
         # Tag below avatar
         tag_y = av_box_y + av_box_size + 14
@@ -129,12 +134,12 @@ def generate_smooth_bio_hud():
             bdraw.text((mx + val_offset, my), m_val, fill=m_col, font=f_mono_bold)
             mx += 170
             
-        bquant = bframe.convert('RGB').quantize(colors=128, method=Image.Resampling.LANCZOS, dither=Image.Dither.FLOYDSTEINBERG)
+        bquant = bframe.convert('RGB').quantize(colors=160, method=Image.Resampling.LANCZOS, dither=Image.Dither.FLOYDSTEINBERG)
         bio_frames.append(bquant)
         
-    out_path = os.path.join(assets_dir, 'dope-bio-animated.gif')
+    out_path = os.path.join(assets_dir, 'dope-bio-v4.gif')
     bio_frames[0].save(out_path, save_all=True, append_images=bio_frames[1:], duration=55, loop=0, optimize=True)
-    print(f"Smooth bio HUD saved to {out_path} ({os.path.getsize(out_path) / 1024.0:.1f} KB)")
+    print(f"Bio HUD with white Dope avatar saved to {out_path} ({os.path.getsize(out_path) / 1024.0:.1f} KB)")
 
 if __name__ == '__main__':
     generate_smooth_bio_hud()

@@ -4,7 +4,7 @@
 
 <br />
 
-<img src="./assets/dope-bio-v3.gif" alt="DOPE — Gothic Bio HUD" width="100%" />
+<img src="./assets/dope-bio-v4.gif" alt="DOPE — Gothic Bio HUD" width="100%" />
 
 <br />
 
