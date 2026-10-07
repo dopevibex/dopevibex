@@ -20,24 +20,24 @@
 
 <br />
 
-## ⚔️ 01 // IDENTITY & OPERATING DIRECTIVE
+## PROFILE
 
 Full-Stack Developer building modern web applications and backends with a focus on clean code, performance, and good design.
 
 I enjoy building useful projects, experimenting with new ideas, and learning along the way. I also have experience in cybersecurity, including network analysis, system security, and making applications safer and more reliable.
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ PROFILE                                                                     │
-├─────────────────────┬───────────────────────────────────────────────────────┤
-│ Name                │ DOPE                                                  │
-│ Role                │ Full-Stack Developer                                  │
-│ Focus               │ Web Development · AI · Cybersecurity                  │
-│ Frameworks          │ Next.js · React · Node.js · Express · PHP             │
-│ Databases           │ MySQL · PostgreSQL · MongoDB                          │
-│ Security            │ Network Analysis · System Hardening                  │
-│ Status              │ Building · Learning · Improving                      │
-└─────────────────────┴───────────────────────────────────────────────────────┘
+┌──────────────────────┬─────────────────────────────────────────────────────────┐
+│ PROFILE                                                                        │
+├──────────────────────┼─────────────────────────────────────────────────────────┤
+│ Name                 │ DOPE                                                    │
+│ Role                 │ Full-Stack Developer                                    │
+│ Focus                │ Web Development · AI · Cybersecurity                    │
+│ Frameworks           │ Next.js · React · Node.js · Express · PHP               │
+│ Databases            │ MySQL · PostgreSQL · MongoDB                            │
+│ Security             │ Network Analysis · System Hardening                     │
+│ Status               │ Building · Learning · Improving                         │
+└──────────────────────┴─────────────────────────────────────────────────────────┘
 ```
 
 <br />
