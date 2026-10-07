@@ -4,12 +4,9 @@
 
 <br />
 
-```diff
-+ OPERATOR: DOPE (Rashid Ali)
-+ DISCIPLINE: Full-Stack Engineering & Cyber Defense
-+ ACADEMIC: Bachelor of Information Technology (BUITEMS)
-+ FOCUS: Next.js · React · Node.js · PHP · Defensive Security
-```
+<img src="./assets/dope-bio-animated.gif" alt="DOPE — Gothic Bio HUD" width="100%" />
+
+<br />
 
 ---
 
@@ -17,7 +14,7 @@
   <a href="https://vubix.duckdns.org/"><img src="https://img.shields.io/badge/VUBIX-LIVE_PLATFORM-111116?style=for-the-badge&logoColor=ff1e42&labelColor=08080b&color=ff1e42" alt="Vubix Platform" /></a>
   <a href="https://discord.com/users/dopevibez"><img src="https://img.shields.io/badge/DISCORD-dopevibez-111116?style=for-the-badge&logo=discord&logoColor=ffffff&labelColor=08080b&color=252530" alt="Discord" /></a>
   <a href="mailto:dopevibex@gmail.com"><img src="https://img.shields.io/badge/ENCRYPTED_MAIL-dopevibex-111116?style=for-the-badge&logo=gmail&logoColor=ffffff&labelColor=08080b&color=252530" alt="Email" /></a>
-  <a href="https://rashidali.is-a.dev"><img src="https://img.shields.io/badge/PORTFOLIO-rashidali.is--a.dev-111116?style=for-the-badge&logoColor=ff1e42&labelColor=08080b&color=252530" alt="Portfolio" /></a>
+  <a href="https://github.com/dopevibex/portfolio"><img src="https://img.shields.io/badge/PORTFOLIO-DEMONIC_V1-111116?style=for-the-badge&logoColor=ff1e42&labelColor=08080b&color=252530" alt="Portfolio Repo" /></a>
 </p>
 
 </div>
@@ -26,21 +23,21 @@
 
 ## ⚔️ 01 // IDENTITY & OPERATING DIRECTIVE
 
-Full-Stack Developer and IT Graduate with hands-on experience spanning modern web application engineering, scalable API architecture, and defensive cybersecurity operations.
+Full-Stack Developer and defensive systems engineer crafting resilient web architectures, high-performance backends, and hardened digital interfaces.
 
-I build fast, resilient web applications using **Next.js**, **React**, **Node.js**, and **PHP**, backed by relational SQL and document databases. In parallel, I focus on defensive security—conducting network traffic analysis, log auditing, threat triage, and system hardening to ensure applications remain solid in production.
+Focused on **Next.js**, **React**, **Node.js**, and **PHP 8**, backed by relational SQL and document stores. In parallel, operating in defensive cybersecurity—traffic analysis, log auditing, threat triage, and system hardening to ensure applications remain inviolable under pressure.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ PROFILE SPECIFICATION                                                       │
+│ OPERATOR SPECIFICATION // DOPE                                              │
 ├─────────────────────┬───────────────────────────────────────────────────────┤
-│ Identity            │ DOPE / Rashid Ali                                     │
+│ Identity            │ DOPE                                                  │
 │ GitHub Handle       │ @dopevibex                                            │
-│ Primary Stacks      │ Next.js · React · Node.js · PHP · TypeScript · MySQL  │
-│ Defensive Security  │ Traffic Analysis · SOC Telemetry · System Hardening   │
-│ Education           │ Bachelor of Information Technology (BUITEMS)          │
-│ Certification       │ Front-End Development (SMIT) · Full-Stack Web (DTAN) │
-│ Status              │ Engineering production software & security tooling    │
+│ Primary Disciplines │ Full-Stack Engineering · Defensive Cyber Systems      │
+│ Core Frameworks     │ Next.js · React · Node.js · Express · PHP 8 · TS      │
+│ Data Persistence    │ MySQL · PostgreSQL · MongoDB                          │
+│ Defense Operations  │ Protocol Analysis · SOC Telemetry · System Hardening  │
+│ Operating Status    │ Inviolable · Sovereign · Active Development           │
 └─────────────────────┴───────────────────────────────────────────────────────┘
 ```
 
@@ -50,16 +47,16 @@ I build fast, resilient web applications using **Next.js**, **React**, **Node.js
 
 ## 🗡️ 02 // TACTICAL ARSENAL
 
-Battle-tested technologies and tools across frontend, backend, database management, and security infrastructure:
+Battle-tested technologies across frontend, backend, database engines, and defensive infrastructure:
 
-### `CORE WEAPONS // FRONTEND`
+### `CORE WEAPONS // FRONTEND & INTERFACE`
 - **Languages & Frameworks:** JavaScript (ES6+), TypeScript, React, Next.js (App Router, SSR, SSG)
-- **Styling & Layout:** Modern CSS3 (Flexbox/Grid), Tailwind CSS, Bootstrap 5, Semantic HTML5
-- **DOM & Animation:** DOM Scripting, jQuery, Interactive Canvas
+- **Styling & Layout:** Modern CSS3 (Grid/Flexbox), Tailwind CSS, Bootstrap 5, Semantic HTML5
+- **Interactive UI:** DOM Scripting, Custom Canvas, Hardware-Accelerated Animations
 
 ### `SERVER RUNTIMES // BACKEND & APIs`
-- **Server Engines:** Node.js, Express.js, PHP 8 (OOP, Session Handling, Prepared Queries)
-- **API Architecture:** RESTful Endpoints, Asynchronous Pipelines, JSON Payloads, Middleware Routing
+- **Server Engines:** Node.js, Express.js, PHP 8 (OOP, Session Architecture, Prepared Queries)
+- **API Architecture:** RESTful Endpoints, Asynchronous Pipelines, Secure Payloads, Middleware Routing
 
 ### `DATA PERSISTENCE // DATABASES`
 - **Relational RDBMS:** MySQL, PostgreSQL (Schema Design, Indexing, Joins, Query Optimization)
@@ -113,17 +110,16 @@ Battle-tested technologies and tools across frontend, backend, database manageme
 
 ## 📡 04 // TRANSMISSION NEXUS
 
-Open for high-impact software engineering, web application builds, and defensive security collaboration:
+Direct communication channels for software engineering, architecture, and defensive security collaboration:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ DIRECT CHANNELS                                                             │
+│ DIRECT TRANSMISSION CHANNELS                                                │
 ├───────────────────┬────────────────────────────┬────────────────────────────┤
 │ Discord           │ dopevibez                  │ https://discord.com/users/dopevibez │
-│ Primary Email     │ dopevibex@gmail.com        │ mailto:dopevibex@gmail.com │
-│ Live Portfolio    │ rashidali.is-a.dev         │ https://rashidali.is-a.dev │
-│ LinkedIn          │ rashidalix                 │ https://linkedin.com/in/rashidalix │
+│ Encrypted Mail    │ dopevibex@gmail.com        │ mailto:dopevibex@gmail.com │
 │ GitHub Profile    │ dopevibex                  │ https://github.com/dopevibex │
+│ Live Systems      │ Vubix Platform             │ https://vubix.duckdns.org/ │
 └───────────────────┴────────────────────────────┴────────────────────────────┘
 ```
 
