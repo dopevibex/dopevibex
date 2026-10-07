@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/dope-hero.gif" alt="DOPE — Developer · Inviolable · Sovereign" width="100%" />
+<img src="./assets/dope-banner.gif" alt="DOPE — Developer · Inviolable · Sovereign" width="100%" />
 
 <br />
 
