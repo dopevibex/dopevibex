@@ -8,24 +8,40 @@ def generate_smooth_bio_hud():
     assets_dir = os.path.join(repo_dir, 'assets')
     os.makedirs(assets_dir, exist_ok=True)
     
-    # Load white Dope image
+    # Load white Dope image and transform for dark theme
     white_dope_path = r'C:\Users\Puzzz\.gemini\antigravity\brain\a652c583-ed1f-4213-966a-c7803255cc3e\.user_uploaded\media_1791410551299.png'
-    white_img = Image.open(white_dope_path).convert('RGBA')
+    white_img = Image.open(white_dope_path).convert('RGB')
     w, h = white_img.size
     
-    # Crop central calligraphy, crown, red sun & ink smoke
+    # Crop central calligraphy & crown/sun
     crop_box = (int(w * 0.15), int(h * 0.02), int(w * 0.75), int(h * 0.88))
     white_crop = white_img.crop(crop_box)
     
-    # Fit nicely inside avatar box (size 135x135)
+    # Dark blend: Invert calligraphy to metallic silver/white while preserving red crown & sun, matching dark theme background (10, 11, 16)
+    arr = np.array(white_crop).astype(np.float32)
+    r_c, g_c, b_c = arr[:,:,0], arr[:,:,1], arr[:,:,2]
+    lum = (0.299*r_c + 0.587*g_c + 0.114*b_c) / 255.0
+    
+    # Red detection
+    is_red = (r_c > g_c * 1.35) & (r_c > b_c * 1.35) & (r_c > 80)
+    
+    # Construct seamless dark artwork
+    new_r = np.where(is_red, r_c * 1.1, np.where(lum > 0.82, 10.0, (1.0 - lum) * 235.0 + 10.0))
+    new_g = np.where(is_red, g_c * 0.9, np.where(lum > 0.82, 11.0, (1.0 - lum) * 215.0 + 11.0))
+    new_b = np.where(is_red, b_c * 0.9, np.where(lum > 0.82, 16.0, (1.0 - lum) * 225.0 + 16.0))
+    
+    dark_emblem_np = np.stack([new_r, new_g, new_b], axis=-1)
+    dark_emblem = Image.fromarray(np.clip(dark_emblem_np, 0, 255).astype(np.uint8))
+    
+    # Fit inside avatar box (size 135x135)
     av_box_size = 135
     target_w = 127
-    target_h = int(target_w * (white_crop.height / white_crop.width))
+    target_h = int(target_w * (dark_emblem.height / dark_emblem.width))
     if target_h > 127:
         target_h = 127
-        target_w = int(target_h * (white_crop.width / white_crop.height))
+        target_w = int(target_h * (dark_emblem.width / dark_emblem.height))
         
-    white_resized = white_crop.resize((target_w, target_h), Image.Resampling.LANCZOS)
+    emblem_resized = dark_emblem.resize((target_w, target_h), Image.Resampling.LANCZOS)
     
     bio_w = 900
     bio_h = 240
@@ -41,7 +57,7 @@ def generate_smooth_bio_hud():
         f_mono = f_mono_bold
         f_header = f_mono_bold
         
-    print("Synthesizing Bio HUD with white Dope avatar...")
+    print("Synthesizing Bio HUD with seamlessly integrated dark Dope calligraphy avatar...")
     for f in range(num_frames):
         t = f / float(num_frames)
         pulse = 0.5 + 0.5 * math.sin(t * 2 * math.pi)
@@ -82,13 +98,13 @@ def generate_smooth_bio_hud():
         # Avatar Frame
         av_box_x = 24
         av_box_y = 24
-        bdraw.rectangle([av_box_x, av_box_y, av_box_x + av_box_size, av_box_y + av_box_size], outline=(48, 52, 68, 255), fill=(250, 250, 252, 255), width=1)
+        bdraw.rectangle([av_box_x, av_box_y, av_box_x + av_box_size, av_box_y + av_box_size], outline=(48, 52, 68, 255), fill=(10, 11, 16, 255), width=1)
         bdraw.rectangle([av_box_x + 3, av_box_y + 3, av_box_x + av_box_size - 3, av_box_y + av_box_size - 3], outline=(255, 30, 66, int(100 + 60 * pulse)), width=1)
         
-        # Paste White Dope Calligraphy Emblem inside Avatar Box
+        # Paste Dark-Blended Calligraphy Emblem inside Avatar Box
         epx = av_box_x + (av_box_size - target_w) // 2
         epy = av_box_y + (av_box_size - target_h) // 2
-        bframe.paste(white_resized, (epx, epy), white_resized)
+        bframe.paste(emblem_resized, (epx, epy))
         
         # Tag below avatar
         tag_y = av_box_y + av_box_size + 14
@@ -99,8 +115,9 @@ def generate_smooth_bio_hud():
         rx = 185
         ry = 26
         
+        # Top Header Bar (Removed [STATUS: ACTIVE TELEMETRY])
         bdraw.text((rx, ry), "OPERATOR IDENTITY // DOPE", fill=(255, 30, 66, 255), font=f_header)
-        bdraw.text((rx + 340, ry + 2), "[STATUS: ACTIVE TELEMETRY]", fill=(140, 145, 160, 240), font=f_mono)
+        
         bdraw.line([(rx, ry + 24), (bio_w - 24, ry + 24)], fill=(40, 44, 56, 255), width=1)
         
         fields = [
@@ -121,10 +138,10 @@ def generate_smooth_bio_hud():
         bdraw.line([(rx, my), (bio_w - 24, my)], fill=(32, 35, 45, 255), width=1)
         my += 10
         
+        # Bottom Metrics Row (Removed CODE INTEGRITY: 100%)
         metrics = [
-            ("CODE INTEGRITY", "100%", (255, 30, 66)),
-            ("DEFENSIVE STATUS", "INVIOLABLE", (220, 225, 235)),
-            ("RUNTIME STATUS", "OPTIMAL", (255, 60, 90)),
+            ("DEFENSIVE STATUS", "INVIOLABLE", (255, 30, 66)),
+            ("RUNTIME STATUS", "OPTIMAL", (255, 75, 95)),
             ("SECURITY TRACE", "0-TRACE", (220, 225, 235))
         ]
         mx = rx
@@ -132,14 +149,14 @@ def generate_smooth_bio_hud():
             bdraw.text((mx, my), f"{m_name}:", fill=(130, 135, 150, 240), font=f_mono)
             val_offset = int(bdraw.textlength(f"{m_name}: ", font=f_mono))
             bdraw.text((mx + val_offset, my), m_val, fill=m_col, font=f_mono_bold)
-            mx += 170
+            mx += 225
             
         bquant = bframe.convert('RGB').quantize(colors=160, method=Image.Resampling.LANCZOS, dither=Image.Dither.FLOYDSTEINBERG)
         bio_frames.append(bquant)
         
-    out_path = os.path.join(assets_dir, 'dope-bio-v4.gif')
+    out_path = os.path.join(assets_dir, 'dope-bio-v5.gif')
     bio_frames[0].save(out_path, save_all=True, append_images=bio_frames[1:], duration=55, loop=0, optimize=True)
-    print(f"Bio HUD with white Dope avatar saved to {out_path} ({os.path.getsize(out_path) / 1024.0:.1f} KB)")
+    print(f"Refined Bio HUD saved to {out_path} ({os.path.getsize(out_path) / 1024.0:.1f} KB)")
 
 if __name__ == '__main__':
     generate_smooth_bio_hud()
