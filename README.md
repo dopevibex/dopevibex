@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="./assets/dope-banner.gif" alt="DOPE — Developer · Inviolable · Sovereign" width="100%" />
+<img src="./assets/dope-banner-v3.gif" alt="DOPE — Developer · Inviolable · Sovereign" width="100%" />
 
 <br />
 
-<img src="./assets/dope-bio-animated.gif" alt="DOPE — Gothic Bio HUD" width="100%" />
+<img src="./assets/dope-bio-v3.gif" alt="DOPE — Gothic Bio HUD" width="100%" />
 
 <br />
 
