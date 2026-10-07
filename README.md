@@ -72,20 +72,6 @@ Battle-tested technologies across frontend, backend, database engines, and defen
 
 ---
 
-## 📡 03 // TRANSMISSION NEXUS
-
-Direct communication channels for software engineering, architecture, and defensive security collaboration:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ DIRECT TRANSMISSION CHANNELS                                                │
-├───────────────────┬────────────────────────────┬────────────────────────────┤
-│ Discord           │ dopevibez                  │ https://discord.com/users/dopevibez │
-│ Encrypted Mail    │ dopevibex@gmail.com        │ mailto:dopevibex@gmail.com │
-│ GitHub Profile    │ dopevibex                  │ https://github.com/dopevibex │
-└───────────────────┴────────────────────────────┴────────────────────────────┘
-```
-
 <br />
 
 <div align="center">
