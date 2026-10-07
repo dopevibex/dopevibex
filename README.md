@@ -11,10 +11,9 @@
 ---
 
 <p align="center">
-  <a href="https://vubix.duckdns.org/"><img src="https://img.shields.io/badge/VUBIX-LIVE_PLATFORM-111116?style=for-the-badge&logoColor=ff1e42&labelColor=08080b&color=ff1e42" alt="Vubix Platform" /></a>
   <a href="https://discord.com/users/dopevibez"><img src="https://img.shields.io/badge/DISCORD-dopevibez-111116?style=for-the-badge&logo=discord&logoColor=ffffff&labelColor=08080b&color=252530" alt="Discord" /></a>
   <a href="mailto:dopevibex@gmail.com"><img src="https://img.shields.io/badge/ENCRYPTED_MAIL-dopevibex-111116?style=for-the-badge&logo=gmail&logoColor=ffffff&labelColor=08080b&color=252530" alt="Email" /></a>
-  <a href="https://github.com/dopevibex/portfolio"><img src="https://img.shields.io/badge/PORTFOLIO-DEMONIC_V1-111116?style=for-the-badge&logoColor=ff1e42&labelColor=08080b&color=252530" alt="Portfolio Repo" /></a>
+  <a href="https://github.com/dopevibex"><img src="https://img.shields.io/badge/GITHUB-dopevibex-111116?style=for-the-badge&logo=github&logoColor=ffffff&labelColor=08080b&color=ff1e42" alt="GitHub" /></a>
 </p>
 
 </div>
@@ -73,42 +72,7 @@ Battle-tested technologies across frontend, backend, database engines, and defen
 
 ---
 
-## 🔮 03 // COMBAT ARTIFACTS (FEATURED WORK)
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">🎬 VUBIX ENTERTAINMENT PLATFORM</h3>
-      <p align="center">
-        <b>Production Media Streaming & Indexing Engine</b><br />
-        <a href="https://vubix.duckdns.org/"><b>[ Launch Live Platform ]</b></a>
-      </p>
-      <ul>
-        <li>All-in-one responsive platform to search, browse, and stream movies, TV shows, anime, and manga online.</li>
-        <li>Architected with Next.js and Tailwind CSS for rapid navigation, smooth media playback, and zero clutter.</li>
-        <li><b>Stack:</b> Next.js · React · Tailwind CSS · REST APIs</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">🩸 DEMONIC DEVELOPER PORTFOLIO</h3>
-      <p align="center">
-        <b>Dark Gothic 3D Interactive Portfolio</b><br />
-        <a href="https://github.com/dopevibex/portfolio"><b>[ View Repository ]</b></a>
-      </p>
-      <ul>
-        <li>Cinematic dark fantasy developer portfolio with hardware-accelerated animations and gothic typography.</li>
-        <li>Interactive identity stages, dynamic skill marquee systems, and contact nexus.</li>
-        <li><b>Stack:</b> Modern JavaScript · GSAP · WebGL · Custom CSS</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-<br />
-
----
-
-## 📡 04 // TRANSMISSION NEXUS
+## 📡 03 // TRANSMISSION NEXUS
 
 Direct communication channels for software engineering, architecture, and defensive security collaboration:
 
@@ -119,7 +83,6 @@ Direct communication channels for software engineering, architecture, and defens
 │ Discord           │ dopevibez                  │ https://discord.com/users/dopevibez │
 │ Encrypted Mail    │ dopevibex@gmail.com        │ mailto:dopevibex@gmail.com │
 │ GitHub Profile    │ dopevibex                  │ https://github.com/dopevibex │
-│ Live Systems      │ Vubix Platform             │ https://vubix.duckdns.org/ │
 └───────────────────┴────────────────────────────┴────────────────────────────┘
 ```
 
