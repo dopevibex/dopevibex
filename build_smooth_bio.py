@@ -42,7 +42,7 @@ def generate_smooth_bio_hud():
     emblem_resized = dark_emblem.resize((target_w, target_h), Image.Resampling.LANCZOS)
     
     bio_w = 900
-    bio_h = 220  # Streamlined height without bottom text
+    bio_h = 210  # Compact, perfectly proportioned height
     num_frames = 36
     bio_frames = []
     
@@ -55,7 +55,7 @@ def generate_smooth_bio_hud():
         f_mono = f_mono_bold
         f_header = f_mono_bold
         
-    print("Synthesizing Bio HUD with clean terminal fields and no bottom text...")
+    print("Synthesizing Bio HUD with ABOUT ME and custom field specs...")
     for f in range(num_frames):
         t = f / float(num_frames)
         pulse = 0.5 + 0.5 * math.sin(t * 2 * math.pi)
@@ -95,7 +95,7 @@ def generate_smooth_bio_hud():
         
         # Avatar Frame
         av_box_x = 24
-        av_box_y = 20
+        av_box_y = 18
         bdraw.rectangle([av_box_x, av_box_y, av_box_x + av_box_size, av_box_y + av_box_size], outline=(48, 52, 68, 255), fill=(10, 11, 16, 255), width=1)
         bdraw.rectangle([av_box_x + 3, av_box_y + 3, av_box_x + av_box_size - 3, av_box_y + av_box_size - 3], outline=(255, 30, 66, int(100 + 60 * pulse)), width=1)
         
@@ -104,38 +104,44 @@ def generate_smooth_bio_hud():
         epy = av_box_y + (av_box_size - target_h) // 2
         bframe.paste(emblem_resized, (epx, epy))
         
-        # Tag below avatar
-        tag_y = av_box_y + av_box_size + 12
+        # Tag below avatar: DEVELOPER
+        tag_y = av_box_y + av_box_size + 10
         bdraw.rectangle([av_box_x, tag_y, av_box_x + av_box_size, tag_y + 22], fill=(220, 38, 38, 35), outline=(255, 30, 66, 160))
-        bdraw.text((av_box_x + 14, tag_y + 5), "SOVEREIGN // APEX", fill=(255, 230, 235, 255), font=f_mono_bold)
+        tag_str = "DEVELOPER"
+        tag_tx = av_box_x + (av_box_size - draw_text_width(bdraw, tag_str, f_mono_bold)) // 2
+        bdraw.text((tag_tx, tag_y + 5), tag_str, fill=(255, 230, 235, 255), font=f_mono_bold)
         
         # Right Side: Terminal Data
         rx = 185
         ry = 22
         
-        bdraw.text((rx, ry), "OPERATOR IDENTITY // DOPE", fill=(255, 30, 66, 255), font=f_header)
+        # Header Bar: ABOUT ME
+        bdraw.text((rx, ry), "ABOUT ME", fill=(255, 30, 66, 255), font=f_header)
         bdraw.line([(rx, ry + 24), (bio_w - 24, ry + 24)], fill=(40, 44, 56, 255), width=1)
         
         fields = [
-            ("DISCIPLINE", "Full-Stack Web Engineering · Modern Web Apps · Scalable APIs", (220, 225, 235)),
-            ("PRIMARY ARSENAL", "Next.js · React · Node.js · PHP 8 · TypeScript · MySQL", (255, 230, 235)),
-            ("DEFENSIVE SHIELD", "Network Traffic Analysis · SOC Telemetry · System Hardening", (200, 210, 225)),
-            ("AI CAPABILITIES", "Agentic Systems · Model Context Protocol (MCP) · Automated Workflows", (210, 215, 225)),
-            ("CORE DIRECTIVE", "Engineered for speed, built for resilience, hardened against intrusion", (255, 75, 95))
+            ("WORK", "Web Developer", (220, 225, 235)),
+            ("SKILLS", "Frontend · Backend · Security", (255, 230, 235)),
+            ("AI", "AI · Automation", (200, 210, 225)),
+            ("FOCUS", "Build. Learn. Improve.", (255, 75, 95))
         ]
         
-        fy = ry + 34
+        fy = ry + 36
         for label, val, val_col in fields:
             bdraw.text((rx, fy), f"[{label}]", fill=(160, 165, 180, 240), font=f_mono_bold)
-            bdraw.text((rx + 160, fy), val, fill=val_col, font=f_mono)
-            fy += 26
+            bdraw.text((rx + 110, fy), val, fill=val_col, font=f_mono)
+            fy += 28
             
         bquant = bframe.convert('RGB').quantize(colors=160, method=Image.Resampling.LANCZOS, dither=Image.Dither.FLOYDSTEINBERG)
         bio_frames.append(bquant)
         
-    out_path = os.path.join(assets_dir, 'dope-bio-v6.gif')
+    out_path = os.path.join(assets_dir, 'dope-bio-v7.gif')
     bio_frames[0].save(out_path, save_all=True, append_images=bio_frames[1:], duration=55, loop=0, optimize=True)
-    print(f"Clean Bio HUD saved to {out_path} ({os.path.getsize(out_path) / 1024.0:.1f} KB)")
+    print(f"Updated Bio HUD saved to {out_path} ({os.path.getsize(out_path) / 1024.0:.1f} KB)")
+
+def draw_text_width(draw, text, font):
+    bbox = draw.textbbox((0, 0), text, font=font)
+    return bbox[2] - bbox[0]
 
 if __name__ == '__main__':
     generate_smooth_bio_hud()
